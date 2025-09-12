@@ -3,10 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nome do Clube</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Bonsucesso F.C - Início</title>
 </head>
 <body>
+    <!--header-->
+    <header>
+    <!-- ou header style="background-image: url('img/banner.jpg');"  e tiro o <img src.. > da parte section banner-->
+        <!--container-->
+        <div class="container">
+            <nav>
+                <ul class="ul">
+                    <a href="index.html">Início</a>
+                    <a href="#nossa-historia">Nossa História</a>
+                    <a href="resultados.html">Resultados</a>
+                    <a href="elenco.html">Elenco</a>
+                </ul>
+            </nav>
+            <section class="banner">
+                <div class="banner-overlay">
+                    <div class="banner-content"> 
+                        <img src="img/logo_ori_2.png" alt="Logo Bonsucesso F.C." class="banner-logo">
+                        <h1>Bonsucesso F.C</h1>
+                        <p>Tradição, Raça e Glória: Mais que um time, uma paixão!</p>
+                        <a href="index.html#contatoss" class="btn animate-btn">Entrar em contato</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+
+    <section class="faca-mais" id="nossa-historia">
+        <div class="container"> 
+            <div class="faca-mais-text">
+                <h3>Nossa história</h3>
+                <p>
+                    Desde a sua fundação em [Ano de Fundação, ex: 1985], o Bonsucesso Futebol Clube nasceu de um sonho e da paixão de uma comunidade por um ideal: unir pessoas através do esporte mais amado do Brasil. O que começou como um grupo de amigos jogando em campos de terra batida, logo se transformou em um símbolo de garra e talento para nossa cidade.
+
+                Nossa jornada é marcada por momentos inesquecíveis, desde as primeiras vitórias que ecoaram pelos bairros até os grandes desafios que nos fortaleceram. Cada temporada, cada partida, é um capítulo de dedicação de atletas, comissão técnica e, acima de tudo, de nossa torcida vibrante, que sempre nos impulsiona com seu apoio incondicional.
+
+                Mais do que um clube de futebol, o Bonsucesso F.C. é uma família. Acreditamos nos valores do trabalho em equipe, da disciplina e do respeito, dentro e fora de campo. Nosso compromisso vai além das quatro linhas: buscamos inspirar jovens, fomentar o esporte local e ser um orgulho para todos que vestem e torcem por nossa camisa.
+
+                Olhamos para o futuro com a mesma paixão do primeiro dia, determinados a construir novas glórias, colecionar mais títulos e continuar escrevendo uma história de sucesso, sempre ao lado de nossa fiel torcida. Venha fazer parte dessa trajetória vitoriosa!
+                </p>
+            </div>
+            <div class="faca-mais-img">
+                 <img src="img/logo_ori_2.png" alt="" >
+            </div>
+        </div>
+    </section>
+
+    <section class="section-portal">
+        <div class="container">
+            <h2>Conheça Nossos Heróis e Números</h2>
+            <div class="portal-grid">
+                <a href="elenco.html" class="portal-card">
+                    <div class="portal-overlay"></div>
+                    <img src="img/logo_ori_2.png" alt="Foto do Elenco"> <div class="portal-content">
+                        <h3>Nosso Elenco</h3>
+                        <p>Conheça cada jogador que veste a camisa do Bonsucesso F.C.</p>
+                        <span class="btn btn-portal">Ver Elenco Completo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="elenco.html#ranking-jogadores" class="portal-card">
+                    <div class="portal-overlay"></div>
+                    <img src="img/banner.jpg" alt="Gráficos de Estatísticas"> <div class="portal-content">
+                        <h3>Estatísticas</h3>
+                        <p>Os números que contam nossa história de vitórias e recordes.</p>
+                        <span class="btn btn-portal">Ver Estatísticas <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="secao-contato" id="contatoss">
+            <h2>Nossos Canais</h2>
+            <div class="contato-wrapper">
+                
+                <div class="contato-item">
+                    <a href="https://www.instagram.com/carue_fc" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                        <h4>Instagram</h4>
+                        <p>@carue_fc</p>
+                    </a>
+                </div>
+
+                <div class="contato-item">
+                    <a href="https://wa.me/5511999998888" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>(11) 99999-8888</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
+        <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <img src="img/logo_ori_2.png" alt="Logo Bonsucesso F.C." class="footer-logo">
+                <h3>Bonsucesso F.C.</h3>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bonsucesso F.C. | Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

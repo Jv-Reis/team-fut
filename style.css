@@ -1,0 +1,1398 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Inter", sans-serif;
+}
+body{
+    background-color: #f1f6fc31;
+}
+section,
+
+/* ========================================================== */
+/* =================== ESTILO DO RODAPÉ =================== */
+/* ========================================================== */
+
+footer {
+    padding: 54px 0;
+}
+/* O container principal do rodapé */
+.main-footer {
+    background-color: #190174; /* Cor azul primária do seu site */
+    color: #ffffff;
+    padding: 60px 0 40px 0; /* Mais padding para dar mais respiro */
+    margin-top: 60px; /* Garante um bom espaço acima do rodapé */
+    text-align: center;
+}
+
+/* Parte de cima: Logo e Nome */
+.footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espaço entre a logo e o nome */
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    width: 50px; /* Tamanho da logo no rodapé */
+    height: auto;
+}
+
+.footer-top h3 {
+    color: #ab0e0e;
+    font-size: 2em; /* Tamanho do nome do time */
+    margin: 0; /* Remove margens padrão */
+    font-weight: 700;
+}
+
+/* Parte de baixo: Copyright */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil de separação */
+    padding-top: 30px;
+    font-size: 0.9em;
+    color: #c0c0c0; /* Um branco um pouco mais suave para o texto secundário */
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+h3{
+    font-size: 50px;
+}
+p{
+    color: #ab0e0e;
+}
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+
+}
+.btn{
+    background-color: #ab0e0e ;
+    color: #0000009c;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+.btn.animate-btn{ 
+    animation: animate-outline 1s ease-out infinite;
+}
+.btn:hover{
+    background-color: #ff2222;
+}
+
+@keyframes animate-outline {
+    from{
+        outline: 0px solid #ff2222;
+    }
+    to{
+        outline: 10px solid #4f9bf900;
+    }
+    
+}
+header{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* Estilo da "cápsula" de navegação */
+/* Estilo da "cápsula" de navegação */
+nav {
+    display: flex;
+    justify-content: center; /* CENTRALIZA os links */
+    align-items: center;
+    
+    /* --- NOVAS PROPRIEDADES PARA O EFEITO FIXO --- */
+    position: fixed;      /* Mantém o menu fixo na tela */
+    top: 20px;            /* Distância inicial do topo */
+    left: 50%;            /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para a centralização */
+    z-index: 1000;        /* Garante que o menu fique ACIMA de todo o resto */
+    
+    
+    /* O visual da pílula */
+    background: rgba(0, 0, 0, 0.3); /* Fundo preto semi-transparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco (moderno!) */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Bordas super arredondadas */
+    padding: 10px 20px; /* Padding interno */
+    margin-top: 20px; /* Distância do topo da página */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    /* --- TRANSIÇÃO SUAVE PARA AS MUDANÇAS --- */
+    transition: all 0.4s ease-in-out;
+}
+
+/* NOVA CLASSE: Estilo do menu QUANDO a página for rolada.
+  O fundo se torna sólido para garantir a legibilidade sobre o conteúdo branco da página.
+*/
+nav.nav-scrolled {
+    top: 15px; /* Sobe um pouco para ficar mais compacto */
+    background: #190174; /* Fundo sólido com a cor primária do time */
+    backdrop-filter: none; /* Remove o blur, pois o fundo agora é opaco */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+/* Ajustes nos links do menu */
+nav ul a {
+    color: #ffffff; /* COR BRANCA para os links */
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 20px; /* Arredonda o fundo do link no hover */
+    transition: background-color 0.3s;
+}
+/* Remove a linha de baixo do hover antigo */
+nav ul a:not(.btn)::after {
+    display: none; 
+}
+/* Novo efeito de hover: um fundo sutil no link */
+nav ul a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+}
+.banner .banner-text{
+    margin: 150px;
+    text-align: center;
+    padding: 0 90px;
+}
+.banner .banner-text h1{
+    font-size: 95px;
+    color: #ab0e0e;
+}
+.banner .banner-text p{
+    font-size: 30px;
+    color: #190174;
+    margin: 18px 0;
+}
+
+
+/* faça mais */
+.faca-mais .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+.faca-mais-text{
+    width: 50%;
+    padding-right: 20px;
+}
+.faca-mais-text h3{
+    font-size: 56px;
+    color: #190174;
+    margin-bottom: 15px;
+}
+.faca-mais-text p{
+    font-size: 16px;
+    color: #190174;
+    margin: 15px 0;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+.faca-mais-img{
+    width: 50%;
+}
+.faca-mais-img img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =================================================== */
+/* ============= SEÇÃO DE RESULTADOS ============= */
+/* =================================================== */
+
+.secao-resultados {
+    padding: 60px 0;
+    text-align: center; /* Centraliza o título h2 */
+}
+
+.secao-resultados h2 {
+    font-size: 3em;
+    color: #190174; /* Cor primária do site */
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Estilo principal para cada card de resultado */
+.card-resultado {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indica que o card inteiro é clicável */
+}
+
+.card-resultado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Informações do topo: Data e Campeonato */
+.info-jogo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #777;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 15px;
+}
+
+.campeonato {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Container do Placar */
+.placar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Estilo para cada time no placar */
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 45%; /* Um pouco de espaço para o 'x' no meio */
+}
+
+.time img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.time h3 {
+    font-size: 1.6em; /* Ajustado para um bom tamanho */
+    color: #333;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Número de gols de cada time */
+.gols-time {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #190174;
+}
+
+/* Separador 'x' entre os times */
+.separador {
+    font-size: 2.5em;
+    color: #ab0e0e; /* Vermelho do tema */
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+/* Detalhes fixos: Local do Jogo */
+.detalhes-jogo {
+    font-size: 0.95em;
+    color: #555;
+    text-align: center;
+    width: 100%;
+}
+
+.detalhes-jogo p {
+    margin-bottom: 15px;
+}
+
+
+/* --- A MÁGICA DA EXPANSÃO ACONTECE AQUI --- */
+
+/* 1. Esconde a área de detalhes dos gols por padrão */
+.gols-detalhes {
+    width: 100%;
+    max-height: 0; /* Começa com altura zero */
+    overflow: hidden; /* Esconde o conteúdo que transborda */
+    opacity: 0; /* Começa invisível */
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    transition: all 0.4s ease-out; /* Animação suave para todas as propriedades */
+
+    /* Layout interno dos detalhes */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left; /* Alinha o texto das listas à esquerda */
+}
+
+/* 2. Mostra os detalhes quando o card pai tem a classe 'aberto' */
+.card-resultado.aberto .gols-detalhes {
+    max-height: 500px; /* Um valor grande o suficiente para o conteúdo */
+    opacity: 1; /* Torna visível */
+    margin-top: 20px; /* Adiciona espaço quando aberto */
+    padding-top: 20px; /* Adiciona padding quando aberto */
+    border-top: 1px dashed #eee; /* Adiciona linha separadora */
+}
+
+/* Detalhes de gols para cada time (dentro da área expansível) */
+.gols-time-detalhe {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.gols-time-detalhe ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gols-time-detalhe ul li {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+/* Adiciona um ícone de bola antes de cada gol */
+.gols-time-detalhe ul li::before {
+    content: '⚽';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 0.8em;
+}
+
+/* Ícone de seta para expandir/contrair */
+.icone-expansao {
+    display: inline-block; /* Permite aplicar transformação */
+    font-size: 1.2em;
+    color: #ab0e0e;
+    transition: transform 0.3s ease-out; /* Animação suave para a rotação */
+}
+
+/* 3. Rotaciona o ícone quando o card está 'aberto' */
+.card-resultado.aberto .icone-expansao {
+    transform: rotate(180deg);
+}
+
+/* Estilo para o texto da assistência (o nome dentro dos parênteses) */
+.assistencia {
+  font-size: 0.85em;      /* Deixa a fonte um pouco menor */
+  color: #555;             /* Deixa o nome com uma cor mais sutil */
+  font-style: italic;
+  margin-left: 8px;       /* Cria um pequeno espaço após o nome do marcador */
+}
+
+/* Adiciona o 'A' em vermelho ANTES do nome de quem deu a assistência */
+.assistencia::before {
+  content: "A ";         /* Adiciona o texto 'A: ' antes do conteúdo da span */
+  color: #ab0e0e;        /* A cor vermelha do seu tema */
+  font-weight: bold;
+  font-style: normal;     /* Garante que o "A:" não fique em itálico */
+}
+
+/* ----- RESPONSIVIDADE PARA A SEÇÃO DE RESULTADOS ----- */
+@media (min-width: 768px) {
+    .placar {
+        justify-content: space-around;
+    }
+    .time {
+        width: auto;
+        flex-direction: row; /* Logo e nome lado a lado */
+        gap: 15px; /* Espaço entre logo e nome */
+    }
+    .time img {
+        margin-bottom: 0;
+    }
+    .time h3 {
+        text-align: left;
+        order: 1; /* Coloca o nome depois da imagem */
+    }
+    .gols-time {
+        order: 2; /* Coloca o placar depois do nome */
+    }
+    /* Inverte a ordem para o time da casa */
+    .time-casa {
+        flex-direction: row-reverse;
+    }
+    .time-casa h3 {
+        text-align: right;
+    }
+}
+
+@media (max-width: 600px) {
+    .secao-resultados h2 {
+        font-size: 2.2em;
+    }
+    .card-resultado {
+        padding: 15px;
+    }
+    .time img {
+        width: 60px;
+        height: 60px;
+    }
+    .gols-time {
+        font-size: 3em;
+    }
+    .separador {
+        font-size: 2em;
+    }
+    .info-jogo {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+    .gols-detalhes {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gols-time-detalhe {
+        width: 90%;
+        min-width: unset;
+    }
+}
+
+/* Seção de Contato */
+.secao-contato {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.secao-contato h2 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.contato-wrapper {
+    display: flex;
+    justify-content: center; /* Centraliza os cards */
+    align-items: stretch; /* Faz os cards terem a mesma altura */
+    gap: 40px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+}
+
+.contato-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex-basis: 300px; /* Largura base de cada card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contato-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.contato-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    height: 100%; /* Garante que o link ocupe todo o espaço do card */
+    color: #333; /* Cor padrão do texto dentro do link */
+}
+
+.contato-item i {
+    font-size: 4em; /* Tamanho do ícone */
+    margin-bottom: 20px;
+}
+
+/* Cores específicas para cada ícone */
+.contato-item a:hover i.fa-instagram {
+    color: #E1306C; /* Cor gradiente do Instagram */
+}
+.contato-item a:hover i.fa-whatsapp {
+    color: #25D366; /* Cor do WhatsApp */
+}
+
+.contato-item h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contato-item p {
+    font-size: 1.1em;
+    color: #777; /* Cor do texto secundário */
+    margin: 0;
+}
+
+/* ----- Responsividade para a seção de contato ----- */
+@media (max-width: 768px) {
+    .contato-wrapper {
+        flex-direction: column; /* Coloca os cards um abaixo do outro em telas pequenas */
+        align-items: center; /* Centraliza os cards na vertical */
+    }
+
+    .contato-item {
+        width: 90%; /* Faz os cards ocuparem quase toda a largura da tela */
+        flex-basis: auto; /* Reseta a largura base */
+    }
+}
+
+/* ... (mantenha todo o seu CSS anterior) ... */
+
+/* ... (mantenha todo o seu CSS anterior) ... */
+
+/* ESTILOS PARA O HEADER E BANNER */
+header {
+    background-position: center center; /* Centraliza a imagem no meio */
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh; /* Faz o header ocupar a altura total da viewport */
+    display: flex; /* Para flexbox no header */
+    flex-direction: column; /* Conteúdo em coluna (nav e banner) */
+    justify-content: space-between; /* Empurra nav para cima e banner para o centro */
+    position: relative; /* Necessário para o overlay */
+}
+
+/* Overlay para escurecer o background e melhorar a legibilidade */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Cor preta com 50% de opacidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0; /* Garante que o overlay esteja por baixo do nav */
+}
+
+/* O banner precisa estar acima do overlay */
+nav {
+    position: relative; /* Garante que o nav fique acima do overlay */
+    z-index: 10;
+    /* ... seus estilos de nav existentes ... */
+}
+nav .nav-logo { /* Estilo para a logo na navegação */
+    width: 60px; /* Tamanho da logo na navegação */
+    height: auto;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    height: calc(100vh - 80px); /* Ajusta a altura considerando o nav */
+    padding: 0; /* Remove padding padrão do banner */
+    position: relative; /* Para o z-index */
+    z-index: 1; /* Garante que o conteúdo do banner esteja acima do overlay */
+}
+
+.banner .banner-content { /* Novo wrapper para o conteúdo do banner */
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    color: white; /* Altera a cor do texto para branco para contraste */
+}
+
+.banner .banner-logo { /* Estilo para a logo no banner */
+    width: 180px; /* Tamanho da logo maior no banner */
+    height: auto;
+    margin-bottom: 30px; /* Espaço abaixo da logo */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4)); /* Sombra para destacar */
+}
+
+.banner .banner-content h1 {
+    font-size: 75px; /* Ajustei para um tamanho bom com a logo */
+    color: #FFF; /* Cor branca para o título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para destacar o texto */
+    margin-bottom: 20px;
+}
+
+.banner .banner-content p {
+    font-size: 24px; /* Tamanho do parágrafo */
+    color: #f0f0f0; /* Um branco mais suave para o parágrafo */
+    margin: 18px 0 30px 0; /* Mais espaço para o botão */
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Botões no banner */
+.banner .btn {
+    background-color: #ab0e0e; /* Cor do botão em destaque */
+    color: #ffffff; /* Texto branco no botão */
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 50px; /* Botão mais arredondado */
+    border: 2px solid #ab0e0e;
+}
+.banner .btn:hover {
+    background-color: #ff2222; /* Cor ao passar o mouse */
+    border-color: #ff2222;
+}
+
+
+/* Remova ou ajuste o padding do .banner-text anterior se ainda existir */
+/* .banner .banner-text {
+    margin: 150px;
+    text-align: center;
+    padding: 0 90px;
+} */
+
+
+/* Ajustes gerais para tipografia (se o h3 do .faca-mais também for impactado) */
+h3 {
+    font-size: 45px; /* Levemente menor para não competir com o h1 do banner */
+    color: #190174;
+}
+
+/* Responsividade para o banner */
+@media (max-width: 768px) {
+    .banner .banner-logo {
+        width: 120px; /* Logo menor em mobile */
+        margin-bottom: 20px;
+    }
+    .banner .banner-content h1 {
+        font-size: 50px; /* Título menor em mobile */
+    }
+    .banner .banner-content p {
+        font-size: 18px; /* Parágrafo menor em mobile */
+        padding: 0 10px; /* Padding para o parágrafo não colar nas bordas */
+    }
+    .banner .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    header {
+        height: auto; /* Altura automática em mobile */
+        min-height: 80vh; /* Mas com uma altura mínima */
+    }
+    .banner {
+        height: auto;
+        padding: 40px 0; /* Padding para o conteúdo do banner */
+    }
+}
+
+
+/* SEÇÃO NOSSO ELENCO */
+.section-elenco {
+    background-color: #f8f8f8; /* Um fundo claro para a seção */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.section-elenco h2 {
+    font-size: 4em;
+    color: #190174;
+    margin-bottom: 60px;
+    font-weight: 800;
+}
+
+.posicao-grupo {
+    margin-bottom: 60px; /* Espaço entre os grupos de posição */
+}
+
+.posicao-grupo h3 {
+    font-size: 2.8em;
+    color: #ab0e0e; /* Vermelho para os títulos de posição */
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block; /* Para o pseudo-elemento */
+}
+
+.posicao-grupo h3::after { /* Linha decorativa abaixo do título da posição */
+    content: '';
+    display: block;
+    width: 80%;
+    height: 4px;
+    background-color: #ff2222; /* Vermelho vibrante */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.elenco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid responsivo */
+    gap: 30px; /* Espaço entre os cartões dos jogadores */
+    justify-content: center; /* Centraliza os itens no grid */
+    padding: 0 20px;
+}
+
+.jogador-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden; /* Garante que a imagem arredondada funcione */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indica que o card é interativo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.jogador-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.jogador-card img {
+    width: 100%; /* Imagem ocupa 100% da largura do card */
+    height: 250px; /* Altura fixa para as fotos dos jogadores */
+    object-fit: cover; /* Corta a imagem para preencher sem distorcer */
+    border-bottom: 3px solid #ab0e0e; /* Linha de cor abaixo da foto */
+    margin-bottom: 15px;
+}
+
+.jogador-info {
+    position: relative; /* Para posicionar o número da camisa */
+    width: 100%;
+    padding: 0 15px;
+}
+
+.jogador-info .numero-camisa {
+    position: absolute;
+    top: -50px; /* Puxa o número para cima da imagem */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #190174; /* Fundo azul escuro */
+    color: #ffffff;
+    font-size: 2.2em; /* Número grande */
+    font-weight: 800;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #ffffff; /* Borda branca */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 2; /* Garante que fique por cima */
+}
+
+.jogador-card h4 {
+    font-size: 1.5em;
+    color: #190174;
+    margin-top: 10px; /* Espaço após o número, se houver */
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.jogador-card p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 0;
+}
+
+/* Responsividade para a Seção Elenco */
+@media (max-width: 992px) {
+    .section-elenco h2 {
+        font-size: 3.5em;
+    }
+    .posicao-grupo h3 {
+        font-size: 2.2em;
+    }
+    .elenco-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 25px;
+    }
+    .jogador-card img {
+        height: 220px;
+    }
+    .jogador-info .numero-camisa {
+        font-size: 1.8em;
+        width: 50px;
+        height: 50px;
+        top: -40px;
+    }
+    .jogador-card h4 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-elenco {
+        padding: 60px 0;
+    }
+    .section-elenco h2 {
+        font-size: 2.8em;
+        margin-bottom: 40px;
+    }
+    .posicao-grupo {
+        margin-bottom: 40px;
+    }
+    .posicao-grupo h3 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .elenco-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .jogador-card img {
+        height: 180px;
+    }
+    .jogador-info .numero-camisa {
+        font-size: 1.6em;
+        width: 45px;
+        height: 45px;
+        top: -35px;
+    }
+    .jogador-card h4 {
+        font-size: 1.2em;
+    }
+    .jogador-card p {
+        font-size: 0.9em;
+    }
+}
+
+
+
+.posicao-grupo h3.posicao-header { /* Estilo para o cabeçalho clicável */
+    cursor: pointer; /* Indica que é clicável */
+    display: flex; /* Para alinhar o texto e o ícone */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espaço entre o título e o ícone */
+    padding: 15px 0; /* Mais padding para facilitar o clique */
+    border-bottom: none; /* Remover a linha inferior padrão do h3 */
+    margin-bottom: 20px; /* Ajusta margem com base no novo design */
+}
+
+/* Pseudo-elemento para a linha decorativa (mantido) */
+.posicao-grupo h3.posicao-header::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 4px;
+    background-color: #ff2222; /* Vermelho vibrante */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+    position: absolute; /* Para controlar melhor a posição */
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+}
+
+
+.icone-expansao {
+    font-size: 0.8em; /* Tamanho do ícone menor que o texto */
+    transition: transform 0.3s ease; /* Transição suave para a rotação */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+    line-height: 1; /* Garante que o ícone não afete a altura da linha do h3 */
+}
+
+.posicao-header.aberto .icone-expansao {
+    transform: rotate(180deg); /* Gira o ícone quando está aberto */
+}
+
+.elenco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 0 20px;
+    
+    /* Propriedades para esconder/mostrar com transição */
+    max-height: 0; /* Esconde o conteúdo */
+    overflow: hidden; /* Corta o conteúdo escondido */
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Transição suave */
+    padding-top: 0; /* Remove padding top quando escondido */
+    padding-bottom: 0; /* Remove padding bottom quando escondido */
+    opacity: 0; /* Inicia transparente */
+    transform: translateY(-20px); /* Começa ligeiramente para cima */
+    pointer-events: none; /* Impede interação quando escondido */
+}
+
+.elenco-grid.aberto {
+    max-height: 2000px; /* Valor grande o suficiente para mostrar todo o conteúdo */
+    padding-top: 20px; /* Adiciona padding quando aberto */
+    padding-bottom: 20px; /* Adiciona padding quando aberto */
+    opacity: 1; /* Fica visível */
+    transform: translateY(0); /* Volta para a posição original */
+    pointer-events: auto; /* Permite interação */
+}
+
+/* ... (Manter os estilos de .jogador-card, img, .jogador-info, .numero-camisa, h4, p) ... */
+
+/* Responsividade: Ajustes para o novo layout de expansão */
+@media (max-width: 992px) {
+    /* ... (Manter os estilos existentes) ... */
+    .posicao-grupo h3.posicao-header {
+        font-size: 2.2em;
+        gap: 10px;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* ... (Manter os estilos existentes) ... */
+    .posicao-grupo h3.posicao-header {
+        font-size: 1.8em;
+        gap: 8px;
+        padding: 8px 0;
+    }
+    .elenco-grid {
+        padding: 0 10px;
+    }
+    .elenco-grid.aberto {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+
+
+
+/* ... (Seu CSS existente) ... */
+
+/* SEÇÃO RANKING DE JOGADORES (elenco.html) */
+.section-ranking {
+    background-color: #f8f8f8;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.section-ranking h2 {
+    font-size: 3.5em;
+    color: #190174;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.section-ranking .slogan {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.ranking-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para gols e assistências */
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 900px; /* Limita a largura do wrapper */
+}
+
+.ranking-card {
+    background-color: #ffffff;
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: left; /* Alinha o texto da lista à esquerda */
+}
+
+.ranking-card h3 {
+    font-size: 2em;
+    color: #ab0e0e;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px; /* Espaço para o underline */
+}
+
+.ranking-card h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #190174; /* Sublinhado azul */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.ranking-list {
+    list-style: none; /* Remove marcadores de lista padrão */
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-list li {
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre nome e número */
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee; /* Linha divisória sutil */
+    font-size: 1.1em;
+    color: #333;
+}
+
+.ranking-list li:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.ranking-list li .posicao {
+    font-weight: bold;
+    color: #190174;
+    width: 30px; /* Largura fixa para a posição */
+    flex-shrink: 0; /* Não encolhe */
+}
+
+.ranking-list li .nome-jogador {
+    flex-grow: 1; /* Permite que o nome do jogador ocupe o espaço restante */
+    white-space: nowrap; /* Evita quebras de linha no nome */
+    overflow: hidden; /* Esconde se for muito longo */
+    text-overflow: ellipsis; /* Adiciona "..." se for muito longo */
+    margin: 0 15px; /* Espaçamento entre posição e número */
+}
+
+.ranking-list li .valor {
+    font-weight: bold;
+    color: #ab0e0e;
+    font-size: 1.2em;
+}
+
+/* Responsividade para o Ranking */
+@media (max-width: 992px) {
+    .ranking-wrapper {
+        gap: 30px;
+    }
+    .ranking-card h3 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-ranking h2 {
+        font-size: 2.8em;
+    }
+    .section-ranking .slogan {
+        font-size: 1.3em;
+        margin-bottom: 40px;
+    }
+    .ranking-wrapper {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 30px;
+    }
+    .ranking-card {
+        padding: 25px 20px;
+    }
+    .ranking-card h3 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    .ranking-list li {
+        padding: 12px 0;
+        font-size: 1em;
+    }
+}
+
+
+
+/* ... (Mantenha todo o seu CSS anterior) ... */
+
+/* Estilos Específicos para o header em outras páginas (ex: elenco.html) */
+/* Removi a classe banner-logo do CSS para que a imagem apareça corretamente no HTML */
+header:not([style*="background-image"]) { /* Para headers que não usam background-image do CSS */
+    background-color: #190174; /* Fundo azul escuro para o header */
+    height: auto; /* Altura automática */
+    padding-bottom: 50px; /* Padding no final do header */
+}
+
+/* Ajuste para o banner em páginas secundárias */
+header:not([style*="background-image"]) .banner-overlay {
+    background-color: transparent; /* Overlay transparente para o banner secundário */
+    position: static; /* Não sobrepõe tudo */
+    height: auto;
+}
+
+header:not([style*="background-image"]) .banner-content {
+    padding: 60px 20px; /* Padding para o conteúdo do banner */
+}
+
+header:not([style*="background-image"]) .banner-content .banner-logo {
+    width: 150px; /* Tamanho da logo no banner */
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+header:not([style*="background-image"]) .banner-content h1 {
+    font-size: 60px; /* Título menor para páginas internas */
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+header:not([style*="background-image"]) .banner-content p {
+    font-size: 20px;
+    color: #e0e0e0;
+    margin: 15px 0 30px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Estilo para links ativos na navegação */
+nav ul a.active {
+    color: #ff2222; /* Cor de destaque para o link da página atual */
+}
+nav ul a.active::after {
+    width: 100%; /* Sublinhado completo para o link ativo */
+}
+
+
+/* SEÇÃO ESTATÍSTICAS (NOVO em elenco.html) */
+.section-estatisticas {
+    background-color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.section-estatisticas h2 {
+    font-size: 4em;
+    color: #190174;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.section-estatisticas .slogan {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+.estatisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.estatistica-card {
+    background-color: #f0f0f0; /* Fundo mais claro para os cards */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.estatistica-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.estatistica-card h3 {
+    font-size: 1.6em;
+    color: #ab0e0e; /* Vermelho para o título da estatística */
+    margin-bottom: 15px;
+}
+
+.estatistica-card .numero {
+    font-size: 3em;
+    font-weight: 800;
+    color: #190174; /* Azul para o número */
+    margin-bottom: 15px;
+}
+
+.estatistica-card i {
+    font-size: 2.5em;
+    color: #190174; /* Ícone azul */
+}
+
+.estatisticas-texto {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.estatisticas-texto p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* SEÇÃO PORTAL (NOVO em index.html) */
+.section-portal {
+    background-color: #f0f0f0;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.section-portal h2 {
+    font-size: 3.5em;
+    color: #190174;
+    margin-bottom: 60px;
+    font-weight: 800;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 40px;
+}
+
+.portal-card {
+    position: relative;
+    height: 350px; /* Altura fixa para os cartões do portal */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; /* Conteúdo na parte inferior */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.portal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.portal-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
+
+.portal-card:hover img {
+    transform: scale(1.05); /* Zoom sutil na imagem no hover */
+}
+
+.portal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%); /* Gradiente escuro na parte inferior */
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.portal-card:hover .portal-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); /* Mais escuro no hover */
+}
+
+.portal-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    color: white;
+}
+
+.portal-content h3 {
+    font-size: 2.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.portal-content p {
+    font-size: 1.1em;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.btn-portal {
+    background-color: #ab0e0e; /* Vermelho do time */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    display: inline-flex; /* Para alinhar ícone com texto */
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-portal:hover {
+    background-color: #ff2222;
+    transform: translateY(-2px);
+}
+
+/* Responsividade para as novas seções */
+@media (max-width: 992px) {
+    .section-estatisticas h2, .section-portal h2 {
+        font-size: 3em;
+    }
+    .estatisticas-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 30px;
+    }
+    .estatistica-card h3 {
+        font-size: 1.4em;
+    }
+    .estatistica-card .numero {
+        font-size: 2.5em;
+    }
+    .portal-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 30px;
+    }
+    .portal-card {
+        height: 300px;
+    }
+    .portal-content h3 {
+        font-size: 1.8em;
+    }
+    .portal-content p {
+        font-size: 1em;
+    }
+    header:not([style*="background-image"]) .banner-content h1 {
+        font-size: 45px;
+    }
+    header:not([style*="background-image"]) .banner-content p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-estatisticas h2, .section-portal h2 {
+        font-size: 2.5em;
+    }
+    .estatisticas-grid {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        gap: 20px;
+    }
+    .estatistica-card h3 {
+        font-size: 1.2em;
+    }
+    .estatistica-card .numero {
+        font-size: 2em;
+    }
+    .portal-content h3 {
+        font-size: 1.6em;
+    }
+    .portal-content p {
+        font-size: 0.9em;
+    }
+    header:not([style*="background-image"]) .banner-content h1 {
+        font-size: 35px;
+    }
+    header:not([style*="background-image"]) .banner-content p {
+        font-size: 16px;
+    }
+    header:not([style*="background-image"]) .banner-content .banner-logo {
+        width: 100px;
+    }
+}

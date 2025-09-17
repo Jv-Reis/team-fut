@@ -1,186 +1,248 @@
+// script.js ATUALIZADO
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Lógica para "encolher" a nav ao rolar (opcional) ---
-    const mainNav = document.querySelector('nav');
-    if (mainNav) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) { // Se a rolagem for maior que 50px
-                mainNav.classList.add('nav-scrolled');
-            } else {
-                mainNav.classList.remove('nav-scrolled');
-            }
-        });
-    }
 
-    /* ========================================================== */
-    /* ======== LÓGICA PARA O MENU FIXO AO ROLAR ======== */
-    /* ========================================================== */
-    const nav = document.querySelector('nav');
-
-    // Só executa se a barra de navegação existir na página
-    if (nav) {
-        window.addEventListener('scroll', function() {
-            // Verifica se o usuário rolou a página mais de 50 pixels
-            if (window.scrollY > 50) {
-                // Adiciona a classe que muda o estilo
-                nav.classList.add('nav-scrolled');
-            } else {
-                // Remove a classe para voltar ao estilo original
-                nav.classList.remove('nav-scrolled');
-            }
-        });
-    }
-    
-    // --- Lógica para a seção NOSSO ELENCO (apenas em elenco.html) ---
-    // Mantenha este bloco APENAS se você realmente o usa em elenco.html
-    // Caso contrário, pode removê-lo.
-    const posicaoHeaders = document.querySelectorAll('.posicao-header');
-    if (posicaoHeaders.length > 0) { // Só executa se houver headers de posição na página
-        posicaoHeaders.forEach(header => {
-            header.addEventListener('click', function() {
-                const elencoGrid = this.nextElementSibling;
-                const icone = this.querySelector('.icone-expansao');
-
-                if (elencoGrid.classList.contains('aberto')) {
-                    elencoGrid.classList.remove('aberto');
-                    icone.textContent = '▼'; 
-                } else {
-                    elencoGrid.classList.add('aberto');
-                    icone.textContent = '▲'; 
-                }
-            });
-        });
-    }
-
-    
-        /// --- Lógica para EXPANDIR/CONTRAIR DETALHES DOS JOGOS (resultados.html) ---
-    const cardsResultado = document.querySelectorAll('.card-resultado');
-
-    cardsResultado.forEach(card => {
-        // Adiciona o evento de clique ao card inteiro
-        card.addEventListener('click', function() {
-            // Simplesmente alterna a classe 'aberto' no card clicado
-            this.classList.toggle('aberto');
-        });
-
-        // Impede que o clique nos links dentro dos detalhes propague para o card
-        const linksInternos = card.querySelectorAll('a');
-        linksInternos.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
-        });
-    });
-
-
-    // --- Lógica para rolagem suave para âncoras (links #id) ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            const navHeight = mainNav ? mainNav.offsetHeight : 0; // Pega a altura da nav, se existir
-
-            if (targetElement) {
-                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                const offsetPosition = elementPosition - navHeight;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // --- Lógica para scroll suave de âncoras de outras páginas OU ao carregar a página com um hash ---
-    // Esta parte precisa ser executada em AMBOS os arquivos (index.html e elenco.html)
-    const hash = window.location.hash;
-    if (hash) {
-        const targetElement = document.querySelector(hash);
-        if (targetElement) {
-            const navHeight = mainNav ? mainNav.offsetHeight : 0;
-            
-            // Pequeno delay para garantir que o layout esteja renderizado antes de rolar
-            setTimeout(() => {
-                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                const offsetPosition = elementPosition - navHeight;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }, 100); 
-        }
-    }
-
-    // --- DADOS DOS JOGADORES (Para o Ranking) ---
+    // ==========================================================
+    // ======== BANCO DE DADOS CENTRAL DOS JOGADORES ========
+    // (AQUI É O ÚNICO LUGAR QUE VOCÊ PRECISA EDITAR NO FUTURO)
+    // ==========================================================
     const jogadores = [
-        { nome: 'Bruninho', gols: 4, assistencias: 1, foto: 'img/jogadores/atacante_1.jpg' },
-        { nome: 'Leandro', gols: 3, assistencias: 0, foto: 'img/jogadores/meio_3.jpg' },
-        { nome: 'Zinho', gols: 3, assistencias: 2, foto: 'img/jogadores/atacante_2.jpg' },
-        { nome: 'Roger', gols: 2, assistencias: 2, foto: 'img/jogadores/meio_2.jpg' },
-        { nome: 'Robério', gols: 1, assistencias: 2, foto: 'img/jogadores/atacante_3.jpg' },
-        { nome: 'André', gols: 1, assistencias: 2, foto: 'img/jogadores/defensor_1.jpg' },
-        { nome: 'João Vitor', gols: 1, assistencias: 0, foto: 'img/jogadores/defensor_4.jpg' },
-        { nome: 'Kito', gols: 1, assistencias: 0, foto: 'img/jogadores/meio_1.jpg' },
-        { nome: 'Kevem', gols: 1, assistencias: 1, foto: 'img/jogadores/meio_1.jpg' },
-        { nome: 'Vitorugo', gols: 1, assistencias: 0, foto: 'img/jogadores/meio_1.jpg' },
-        { nome: 'Ivan', gols: 0, assistencias: 1, foto: 'img/jogadores/meio_1.jpg' },
-        { nome: 'Elenaldo', gols: 1, assistencias: 0, foto: 'img/jogadores/meio_1.jpg' },
-        { nome: 'Juninho', gols: 1, assistencias: 3, foto: 'img/jogadores/meio_1.jpg' },
+        // Goleiros
+        { nome: 'George', numero: 1, posicao: 'Goleiro', foto: 'img/logo_ori_2.png', jogos: 15, gols: 0, assistencias: 0 },
+        { nome: 'Marquinhos', numero: 12, posicao: 'Goleiro', foto: 'img/logo_ori_2.png', jogos: 5, gols: 0, assistencias: 0 },
+
+        // Defensores
+        { nome: 'Juninho', numero: 2, posicao: 'Lateral Direito', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 3 },
+        { nome: 'Jean', numero: 16, posicao: 'Lateral Direito', foto: 'img/logo_ori_2.png', jogos: 12, gols: 0, assistencias: 0 },
+        { nome: 'João Vitor', numero: 3, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 20, gols: 1, assistencias: 0 },
+        { nome: 'Marcos Vinicius', numero: 4, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 19, gols: 0, assistencias: 0 },
+        { nome: 'Bruno', numero: 17, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 10, gols: 0, assistencias: 0 },
+        { nome: 'Thauã', numero: 18, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 8, gols: 0, assistencias: 0 },
+        { nome: 'André', numero: 6, posicao: 'Lateral Esquerdo', foto: 'img/logo_ori_2.png', jogos: 17, gols: 1, assistencias: 2 },
+
+        // Meio-campistas
+        { nome: 'Ivan', numero: 5, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 22, gols: 0, assistencias: 1 },
+        { nome: 'Maurício', numero: 8, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 21, gols: 0, assistencias: 2 }, 
+        { nome: 'Osmar', numero: 13, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 7, gols: 0, assistencias: 0 },
+        { nome: 'Robério', numero: 7, posicao: 'Meio Campo', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 2 },
+        { nome: 'Vitor Hugo', numero: 14, posicao: 'Meio Campo', foto: 'img/logo_ori_2.png', jogos: 15, gols: 0, assistencias: 0 },
+        { nome: 'Bruninho', numero: 11, posicao: 'Meia Atacante', foto: 'img/logo_ori_2.png', jogos: 20, gols: 4, assistencias: 1 }, 
+
+        // Atacantes
+        { nome: 'Kito', numero: 21, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 14, gols: 1, assistencias: 0 },
+        { nome: 'Roger', numero: 22, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 16, gols: 2, assistencias: 2 }, 
+        { nome: 'Zinho', numero: 10, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 22, gols: 4, assistencias: 2 }, 
+        { nome: 'Elenaldo', numero: 20, posicao: 'Centroavante', foto: 'img/logo_ori_2.png', jogos: 19, gols: 1, assistencias: 0 }, 
+        { nome: 'Kevem', numero: 9, posicao: 'Centroavante', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 1 }, 
+        { nome: 'Leandro', numero: 15, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 17, gols: 3, assistencias: 0 }, 
+        { nome: 'Vitorugo', numero: 19, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 11, gols: 1, assistencias: 0 },
+        { nome: 'Joseph', numero: 23, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 9, gols: 1, assistencias: 0 },
+        
+        // Comissão Técnica
+        { nome: 'Nome do Técnico', posicao: 'Treinador Principal', foto: 'img/jogadores/tecnico.jpg' },
+        { nome: 'Nome do Auxiliar', posicao: 'Auxiliar Técnico', foto: 'img/jogadores/auxiliar.jpg' }
     ];
 
-    // --- Lógica para gerar os Rankings ---
-    function gerarRanking() {
-        // Ranking de Gols
-        const rankingGolsList = document.getElementById('ranking-gols');
-        if (rankingGolsList) { 
-            const artilheiros = [...jogadores]
-                                .filter(jogador => jogador.gols > 0)
-                                .sort((a, b) => b.gols - a.gols); 
-            rankingGolsList.innerHTML = ''; 
+    // ==========================================================
+    // ======== FUNÇÃO PARA GERAR OS CARDS DO ELENCO ========
+    // ==========================================================
+    function gerarElenco() {
+        const containers = {
+            goleiros: document.getElementById('goleiros-grid'),
+            defensores: document.getElementById('defensores-grid'),
+            meioCampistas: document.getElementById('meio-campistas-grid'),
+            atacantes: document.getElementById('atacantes-grid'),
+            comissao: document.getElementById('comissao-tecnica-grid')
+        };
 
-            artilheiros.forEach((jogador, index) => { 
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <span class="posicao">${index + 1}º</span>
-                    <span class="nome-jogador">${jogador.nome}</span>
-                    <span class="valor">${jogador.gols} Gols</span>
-                `;
-                rankingGolsList.appendChild(listItem);
-            });
+        jogadores.forEach(jogador => {
+            // Gera o HTML do overlay apenas se o jogador tiver estatísticas
+            const overlayHTML = jogador.hasOwnProperty('jogos') ? `
+                <div class="jogador-overlay">
+                    <div class="overlay-content">
+                        <h4>${jogador.nome}</h4>
+                        <p>${jogador.posicao}</p>
+                        <hr class="overlay-divider">
+                        <div class="overlay-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">${jogador.jogos}</span>
+                                <span class="stat-label">Jogos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">${jogador.gols}</span>
+                                <span class="stat-label">Gols</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">${jogador.assistencias}</span>
+                                <span class="stat-label">Assist.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ` : '';
+
+            // Cria o HTML do card para cada jogador, incluindo o overlay
+            const cardHTML = `
+                <div class="jogador-card">
+                    <img src="${jogador.foto}" alt="Foto de ${jogador.nome}">
+                    ${overlayHTML}
+                    <div class="jogador-info">
+                        ${jogador.numero ? `<span class="numero-camisa">${jogador.numero}</span>` : ''}
+                        <h4>${jogador.nome}</h4>
+                        <p>${jogador.posicao}</p>
+                    </div>
+                </div>
+            `;
+
+            // Coloca o jogador na sua respectiva seção
+            switch (jogador.posicao) {
+                case 'Goleiro':
+                    if (containers.goleiros) containers.goleiros.innerHTML += cardHTML;
+                    break;
+                case 'Lateral Direito':
+                case 'Zagueiro':
+                case 'Lateral Esquerdo':
+                    if (containers.defensores) containers.defensores.innerHTML += cardHTML;
+                    break;
+                case 'Volante':
+                case 'Meio Campo':
+                case 'Meia Atacante':
+                    if (containers.meioCampistas) containers.meioCampistas.innerHTML += cardHTML;
+                    break;
+                case 'Ponta':
+                case 'Centroavante':
+                    if (containers.atacantes) containers.atacantes.innerHTML += cardHTML;
+                    break;
+                case 'Treinador Principal':
+                case 'Auxiliar Técnico':
+                    if (containers.comissao) containers.comissao.innerHTML += cardHTML;
+                    break;
+            }
+        });
+    }
+
+    // ==========================================================
+    // ======== FUNÇÃO PARA GERAR OS RANKINGS ========
+    // ==========================================================
+    function gerarRanking() {
+        const rankingGolsList = document.getElementById('ranking-gols');
+        const rankingAssistenciasList = document.getElementById('ranking-assistencias');
+
+        // Ranking de Gols
+        if (rankingGolsList) {
+            const artilheiros = [...jogadores]
+                .filter(j => j.gols > 0)
+                .sort((a, b) => b.gols - a.gols);
             
+            rankingGolsList.innerHTML = '';
+            artilheiros.forEach((jogador, index) => {
+                const listItem = `<li><span class="posicao">${index + 1}º</span><span class="nome-jogador">${jogador.nome}</span><span class="valor">${jogador.gols} Gols</span></li>`;
+                rankingGolsList.innerHTML += listItem;
+            });
             if (artilheiros.length === 0) {
-                rankingGolsList.innerHTML = '<li>Nenhum jogador marcou gols ainda nesta temporada.</li>';
+                rankingGolsList.innerHTML = '<li>Nenhum jogador marcou gols ainda.</li>';
             }
         }
 
         // Ranking de Assistências
-        const rankingAssistenciasList = document.getElementById('ranking-assistencias');
-        if (rankingAssistenciasList) { 
+        if (rankingAssistenciasList) {
             const assistentes = [...jogadores]
-                                .filter(jogador => jogador.assistencias > 0)
-                                .sort((a, b) => b.assistencias - a.assistencias); 
-            rankingAssistenciasList.innerHTML = ''; 
+                .filter(j => j.assistencias > 0)
+                .sort((a, b) => b.assistencias - a.assistencias);
 
-            assistentes.forEach((jogador, index) => { 
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <span class="posicao">${index + 1}º</span>
-                    <span class="nome-jogador">${jogador.nome}</span>
-                    <span class="valor">${jogador.assistencias} Assistências</span>
-                `;
-                rankingAssistenciasList.appendChild(listItem);
+            rankingAssistenciasList.innerHTML = '';
+            assistentes.forEach((jogador, index) => {
+                const listItem = `<li><span class="posicao">${index + 1}º</span><span class="nome-jogador">${jogador.nome}</span><span class="valor">${jogador.assistencias} Assist.</span></li>`;
+                rankingAssistenciasList.innerHTML += listItem;
             });
-
             if (assistentes.length === 0) {
-                rankingAssistenciasList.innerHTML = '<li>Nenhum jogador deu assistências ainda nesta temporada.</li>';
+                rankingAssistenciasList.innerHTML = '<li>Nenhum jogador deu assistências ainda.</li>';
             }
         }
     }
 
-    if (document.getElementById('ranking-gols') && document.getElementById('ranking-assistencias')) {
+    // ==========================================================
+    // ======== LÓGICAS DE INTERAÇÃO E NAVEGAÇÃO (JÁ EXISTENTES) ========
+    // ==========================================================
+    
+    // Lógica para o menu fixo ao rolar
+    const nav = document.querySelector('nav');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    }
+
+    // Lógica para expandir seções de elenco
+    const posicaoHeaders = document.querySelectorAll('.posicao-header');
+    posicaoHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            this.classList.toggle('aberto'); // Adiciona a classe no próprio header
+            const elencoGrid = this.nextElementSibling;
+            elencoGrid.classList.toggle('aberto');
+        });
+    });
+
+    // Lógica para expandir detalhes dos jogos
+    const cardsResultado = document.querySelectorAll('.card-resultado');
+    cardsResultado.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('aberto');
+        });
+    });
+
+    // Lógica para rolagem suave para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navHeight = nav ? nav.offsetHeight : 0;
+                const offsetPosition = targetElement.offsetTop - navHeight;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ==========================================================
+    // ======== INICIALIZAÇÃO DAS FUNÇÕES DINÂMICAS ========
+    // ==========================================================
+    if (document.querySelector('.section-elenco')) {
+        gerarElenco();
+    }
+    if (document.querySelector('.section-ranking')) {
         gerarRanking();
     }
+
+    /* ========================================================== */
+    /* ======== LÓGICA PARA DESTACAR O LINK DA PÁGINA ATIVA ======== */
+    /* ========================================================== */
+    function highlightActiveLink() {
+        const navLinks = document.querySelectorAll('nav ul a');
+        
+        // Pega o nome do arquivo da URL atual (ex: "elenco.html")
+        const currentPage = window.location.pathname.split('/').pop();
+
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href').split('/').pop();
+
+            // Caso especial para a página inicial (pode ser "" ou "index.html")
+            if ((currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html') {
+                link.classList.add('active');
+            }
+            // Para as outras páginas
+            else if (linkPage === currentPage && currentPage !== 'index.html' && currentPage !== '') {
+                link.classList.add('active');
+            }
+        });
+    }
+    // Chama a função para executar assim que a página carregar
+    highlightActiveLink();
 });

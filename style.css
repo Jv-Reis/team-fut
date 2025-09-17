@@ -89,6 +89,17 @@ p{
 .btn:hover{
     background-color: #ff2222;
 }
+/* ========================================================== */
+/* ======== CONTAINER DOS BOTÕES DO BANNER ======== */
+/* ========================================================== */
+
+.banner-buttons {
+  display: flex;          /* Ativa o modo flexbox, que permite o alinhamento */
+  justify-content: center;/* Centraliza os botões horizontalmente */
+  align-items: center;    /* Alinha os botões verticalmente (bom para tamanhos diferentes) */
+  gap: 20px;              /* Cria um espaço de 20px ENTRE os botões */
+  flex-wrap: wrap;        /* Permite que os botões quebrem a linha em telas pequenas */
+}
 
 @keyframes animate-outline {
     from{
@@ -776,6 +787,21 @@ h3 {
     width: 100%;
     padding: 0 15px;
 }
+/* ========================================================== */
+/* ======== AJUSTE DE HOVER PARA O CARD DO JOGADOR ======== */
+/* ========================================================== */
+
+/* 1. Prepara a seção de informações para a animação */
+.jogador-info {
+    /* (Mantenha os estilos que você já tem para esta classe) */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Adiciona uma transição suave */
+}
+
+/* 2. Esconde a seção de informações quando o mouse passa sobre o card pai */
+.jogador-card:hover .jogador-info {
+    opacity: 0; /* Deixa o elemento invisível */
+    transform: translateY(10px); /* Opcional: Adiciona um leve deslize para baixo ao sumir */
+}
 
 .jogador-info .numero-camisa {
     position: absolute;
@@ -874,8 +900,6 @@ h3 {
     }
 }
 
-
-
 .posicao-grupo h3.posicao-header { /* Estilo para o cabeçalho clicável */
     cursor: pointer; /* Indica que é clicável */
     display: flex; /* Para alinhar o texto e o ícone */
@@ -968,11 +992,80 @@ h3 {
         padding-bottom: 15px;
     }
 }
+/* ========================================================== */
+/* ======== OVERLAY DE STATS NO CARD DO JOGADOR ======== */
+/* ========================================================== */
+
+/* 1. Prepara o card para conter o overlay */
+.jogador-card {
+    position: relative; /* Essencial para o overlay funcionar */
+}
+
+/* 2. Estilo do overlay (escondido por padrão) */
+.jogador-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa todo o espaço do card */
+    background: linear-gradient(to top, rgba(17, 0, 92, 0.95), rgba(25, 1, 116, 0.8), transparent);
+    color: #ffffff;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha o conteúdo na parte de baixo */
+    padding: 20px;
+
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease-in-out; /* Animação suave */
+}
+
+/* 3. Mostra o overlay quando o mouse passa por cima do card */
+.jogador-card:hover .jogador-overlay {
+    opacity: 1; /* Torna visível */
+}
+
+/* Estilos do conteúdo dentro do overlay */
+.overlay-content {
+    text-align: center;
+}
+
+.overlay-content h4 {
+    font-size: 1.8em;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+}
+
+.overlay-content p {
+    font-size: 1em;
+    color: #ddd;
+    margin-bottom: 15px;
+}
 
 
+/* Grid para as estatísticas (Jogos, Gols, Assist.) */
+.overlay-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
 
-/* ... (Seu CSS existente) ... */
+.stat-number {
+    font-size: 1.8em;
+    font-weight: 800;
+}
+
+.stat-label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #ddd;
+}
 
 /* SEÇÃO RANKING DE JOGADORES (elenco.html) */
 .section-ranking {
@@ -1029,10 +1122,22 @@ h3 {
     border-radius: 2px;
 }
 
+/* ========================================================== */
+/* ======== RANKING COM BARRA DE ROLAGEM ======== */
+/* ========================================================== */
+
 .ranking-list {
-    list-style: none; /* Remove marcadores de lista padrão */
-    padding: 0;
-    margin: 0;
+  /* Propriedades que você já tem (list-style, padding, margin)... */
+
+  /* --- NOVAS PROPRIEDADES PARA A ROLAGEM --- */
+
+  /* 1. Define uma altura máxima para a lista. */
+  /* Este valor foi calculado para mostrar aproximadamente 7 jogadores. */
+  /* Você pode ajustar para mais ou menos, se precisar. */
+  max-height: 360px;
+
+  /* 2. Adiciona a barra de rolagem vertical APENAS se for necessário. */
+  overflow-y: auto;
 }
 
 .ranking-list li {
@@ -1104,7 +1209,6 @@ h3 {
         font-size: 1em;
     }
 }
-
 
 
 /* ... (Mantenha todo o seu CSS anterior) ... */
@@ -1395,4 +1499,23 @@ nav ul a.active::after {
     header:not([style*="background-image"]) .banner-content .banner-logo {
         width: 100px;
     }
+}
+
+/* ========================================================== */
+/* ======== ESTILO PARA O LINK DE NAVEGAÇÃO ATIVO ======== */
+/* ========================================================== */
+
+/* Este estilo será aplicado pelo JavaScript ao link da página atual */
+nav ul a.active {
+  color: #ff2222; /* Cor vermelha vibrante para o destaque */
+  font-weight: 700; /* Deixa o texto um pouco mais grosso */
+  
+  /* Mantém o fundo sutil que já tínhamos para o hover, mas agora fixo */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Opcional: Remove o efeito de hover do link que já está ativo */
+nav ul a.active:hover {
+    /* Você pode manter o mesmo estilo ou remover o efeito de hover */
+    background-color: rgba(255, 255, 255, 0.1);
 }

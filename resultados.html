@@ -14,7 +14,6 @@
             <nav>
                 <ul class="ul">
                     <a href="index.html">Início</a>
-                    <a href="index.html#nossa-historia">Nossa História</a>
                     <a href="resultados.html">Resultados</a>
                     <a href="elenco.html">Elenco</a>
                 </ul>
@@ -25,7 +24,11 @@
                         <img src="img/logo_ori_2.png" alt="Logo Bonsucesso F.C." class="banner-logo">
                         <h1>Bonsucesso F.C</h1>
                         <p>Tradição, Raça e Glória: Mais que um time, uma paixão!</p>
-                        <a href="resultados.html#contatoss" class="btn animate-btn">Entrar em contato</a>
+                        
+                        <div class="banner-buttons">
+                            <a href="resultados.html#resultados" class="btn animate-btn">Últimos Jogos</a>
+                            <a href="resultados.html#contatoss" class="btn animate-btn">Entrar em contato</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -33,8 +36,48 @@
     </header>
 
     <main class="container">
-        <section class="secao-resultados">
+        <section class="secao-resultados" id="resultados">
             <h2>Últimos Jogos</h2>
+
+            <div class="card-resultado">
+                <div class="info-jogo">
+                    <span class="data-jogo">14/09/2025 - 09:00h</span>
+                    <span class="campeonato">Amistoso</span>
+                </div>
+                <div class="placar">
+                    <div class="time time-casa">
+                        <img src="img/logo_ori_2.png" alt="Logo do Outro Adversário">
+                        <h3>Bonsucesso</h3>
+                        <span class="gols-time">2</span>
+                    </div>
+                    <span class="separador">x</span>
+                    <div class="time time-fora">
+                        <span class="gols-time">3</span>
+                        <img src="img/999.png" alt="Logo do Nosso Time">
+                        <h3>Guarani</h3>
+                    </div>
+                </div>
+                <div class="detalhes-jogo">
+                    <p>Arena São Francisco - Malhador, SE</p>
+                    <div class="gols-detalhes">
+                        <div class="gols-time-detalhe nosso-time">
+                            <!-- DETALHES DE CADA TIME-->
+                            <ul>
+                                <li>Joseph</li>
+                                <li>Zinho (P)</li>
+                            </ul>
+                        </div>
+                        <div class="gols-time-detalhe adversario-time">
+                            <ul>
+                                <li>.</li>
+                                <li>.</li>
+                                <li>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="icone-expansao">▼</span>
+                </div>
+            </div>
 
             <div class="card-resultado">
                 <div class="info-jogo">
@@ -77,30 +120,7 @@
                 </div>
             </div>
 
-            <div class="card-resultado">
-                <div class="info-jogo">
-                    <span class="data-jogo">03/08/2024 - 19:30h</span>
-                    <span class="campeonato">Copa Nacional</span>
-                </div>
-                <div class="placar">
-                    <div class="time time-casa">
-                        <img src="img/logo-outro-adversario.png" alt="Logo do Outro Adversário">
-                        <h3>OUTRO ADVERSÁRIO</h3>
-                        <span class="gols-time">0</span>
-                    </div>
-                    <span class="separador">x</span>
-                    <div class="time time-fora">
-                        <span class="gols-time">0</span>
-                        <img src="img/2logo.png" alt="Logo do Nosso Time">
-                        <h3>NOSSO TIME</h3>
-                    </div>
-                </div>
-                <div class="detalhes-jogo">
-                    <p>Arena da Glória - Outra Cidade, UF</p>
-                </div>
-            </div>
-
-            </section>
+        </section>
     </main>
 
     <section class="secao-contato" id="contatoss">

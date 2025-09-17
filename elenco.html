@@ -15,7 +15,6 @@
             
                 <ul class="ul">
                     <a href="index.html">Início</a>
-                    <a href="index.html#nossa-historia">Nossa História</a>
                     <a href="resultados.html">Resultados</a>
                     <a href="elenco.html">Elenco</a>
                 </ul>
@@ -26,7 +25,12 @@
                         <img src="img/logo_ori_2.png" alt="Logo Bonsucesso F.C." class="banner-logo">
                         <h1>Bonsucesso F.C</h1>
                         <p>Tradição, Raça e Glória: Mais que um time, uma paixão!</p>
-                        <a href="elenco.html#contatoss" class="btn animate-btn">Entrar em contato</a>
+                        
+                        <div class="banner-buttons">
+                            <a href="elenco.html#nossas-equipes" class="btn animate-btn">Elenco</a>
+                            <a href="elenco.html#contatoss" class="btn animate-btn">Entrar em contato</a>
+                            <a href="elenco.html#ranking-jogadores" class="btn animate-btn">Rankings</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -34,228 +38,38 @@
     </header>
 
     <main class="container">
-            <section class="section-elenco" id="nossas-equipes">
+        <section class="section-elenco" id="nossas-equipes">
             <div class="container">
                 <h2>Nosso Elenco</h2>
 
                 <div class="posicao-grupo">
                     <h3 class="posicao-header">Goleiros <span class="icone-expansao">▼</span></h3>
-                    <div class="elenco-grid escondido"> 
-                        <div class="jogador-card">
-                            <img src="img/jogadores/foto-George.jpg" alt="Foto do Goleiro Nome Goleiro">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">1</span>
-                                <h4>George</h4>
-                                <p>Goleiro</p>
-                            </div>
+                    <div id="goleiros-grid" class="elenco-grid"> 
                         </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/goleiro_2.jpg" alt="Foto do Goleiro Nome Goleiro 2">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">12</span>
-                                <h4>Marquinhos</h4>
-                                <p>Goleiro</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="posicao-grupo">
                     <h3 class="posicao-header">Defensores <span class="icone-expansao">▼</span></h3>
-                    <div class="elenco-grid escondido"> 
-                        <div class="jogador-card">
-                            <img src="img/jogadores/defensor_1.jpg" alt="Foto do Defensor Nome Defensor">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">2</span>
-                                <h4>Juninho</h4>
-                                <p>Lateral Direito</p>
-                            </div>
+                    <div id="defensores-grid" class="elenco-grid">
                         </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/foto-Jean.jpg" alt="Foto do Defensor Nome Defensor">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">2</span>
-                                <h4>Jean</h4>
-                                <p>Lateral Direito</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/defensor_2.jpg" alt="Foto do Defensor Nome Defensor 2">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">3</span>
-                                <h4>João Vitor</h4>
-                                <p>Zagueiro</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/defensor_3.jpg" alt="Foto do Defensor Nome Defensor 3">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">4</span>
-                                <h4>Marcos Vinicius</h4>
-                                <p>Zagueiro</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/defensor_3.jpg" alt="Foto do Defensor Nome Defensor 3">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">4</span>
-                                <h4>Bruno</h4>
-                                <p>Zagueiro</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/foto-thaua.jpg" alt="Foto do Defensor Nome Defensor 3">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">4</span>
-                                <h4>Thauã</h4>
-                                <p>Zagueiro</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/defensor_4.jpg" alt="Foto do Defensor Nome Defensor 4">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">6</span>
-                                <h4>André</h4>
-                                <p>Lateral Esquerdo</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="posicao-grupo">
                     <h3 class="posicao-header">Meio-campistas <span class="icone-expansao">▼</span></h3>
-                    <div class="elenco-grid escondido"> 
-                        <div class="jogador-card">
-                            <img src="img/jogadores/foto-Ivan.jpg" alt="Foto do Meio-campista Nome Meio">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">5</span>
-                                <h4>Ivan</h4>
-                                <p>Volante</p>
-                            </div>
+                    <div id="meio-campistas-grid" class="elenco-grid">
                         </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/meio_1.jpg" alt="Foto do Meio-campista Nome Meio">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">5</span>
-                                <h4>Maurício</h4>
-                                <p>Volante</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/meio_1.jpg" alt="Foto do Meio-campista Nome Meio">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">5</span>
-                                <h4>Osmar</h4>
-                                <p>Volante</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/meio_2.jpg" alt="Foto do Meio-campista Nome Meio 2">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">8</span>
-                                <h4>Robério</h4>
-                                <p>Meio Campo</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/meio_3.jpg" alt="Foto do Meio-campista Nome Meio 3">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">10</span>
-                                <h4>Vitor Hugo</h4>
-                                <p>Meio Campo</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/meio_3.jpg" alt="Foto do Meio-campista Nome Meio 3">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">10</span>
-                                <h4>Bruninho</h4>
-                                <p>Meia Atacante</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="posicao-grupo">
                     <h3 class="posicao-header">Atacantes <span class="icone-expansao">▼</span></h3>
-                    <div class="elenco-grid escondido"> 
-                        <div class="jogador-card">
-                            <img src="img/jogadores/atacante_1.jpg" alt="Foto do Atacante Nome Atacante">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">7</span>
-                                <h4>Kito</h4>
-                                <p>Ponta</p>
-                            </div>
+                    <div id="atacantes-grid" class="elenco-grid">
                         </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/atacante_1.jpg" alt="Foto do Atacante Nome Atacante">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">7</span>
-                                <h4>Roger</h4>
-                                <p>Ponta</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/atacante_1.jpg" alt="Foto do Atacante Nome Atacante">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">7</span>
-                                <h4>Zinho</h4>
-                                <p>Ponta</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/atacante_2.jpg" alt="Foto do Atacante Nome Atacante 2">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">9</span>
-                                <h4>Elenaldo</h4>
-                                <p>Centroavante</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/atacante_2.jpg" alt="Foto do Atacante Nome Atacante 2">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">9</span>
-                                <h4>Kevem</h4>
-                                <p>Centroavante</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/atacante_3.jpg" alt="Foto do Atacante Nome Atacante 3">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">11</span>
-                                <h4>Leandro</h4>
-                                <p>Ponta</p>
-                            </div>
-                        </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/atacante_3.jpg" alt="Foto do Atacante Nome Atacante 3">
-                            <div class="jogador-info">
-                                <span class="numero-camisa">11</span>
-                                <h4>Vitorugo</h4>
-                                <p>Ponta</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="posicao-grupo">
                     <h3 class="posicao-header">Comissão Técnica <span class="icone-expansao">▼</span></h3>
-                    <div class="elenco-grid escondido"> 
-                        <div class="jogador-card">
-                            <img src="img/jogadores/tecnico.jpg" alt="Foto do Técnico">
-                            <div class="jogador-info">
-                                <h4>Nome do Técnico</h4>
-                                <p>Treinador Principal</p>
-                            </div>
+                    <div id="comissao-tecnica-grid" class="elenco-grid">
                         </div>
-                        <div class="jogador-card">
-                            <img src="img/jogadores/auxiliar.jpg" alt="Foto do Auxiliar Técnico">
-                            <div class="jogador-info">
-                                <h4>Nome do Auxiliar</h4>
-                                <p>Auxiliar Técnico</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>

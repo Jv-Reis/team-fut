@@ -7,35 +7,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================================
     const jogadores = [
         // Goleiros
-        { nome: 'George', numero: 1, posicao: 'Goleiro', foto: 'img/logo_ori_2.png', jogos: 15, gols: 0, assistencias: 0 },
-        { nome: 'Marquinhos', numero: 12, posicao: 'Goleiro', foto: 'img/logo_ori_2.png', jogos: 5, gols: 0, assistencias: 0 },
+        { nome: 'Jogador 1', numero: 1, posicao: 'Goleiro', foto: 'img/logo_ori_2.png', jogos: 15, gols: 0, assistencias: 0 },
+        { nome: 'Jogador 2', numero: 12, posicao: 'Goleiro', foto: 'img/logo_ori_2.png', jogos: 5, gols: 0, assistencias: 0 },
 
         // Defensores
-        { nome: 'Juninho', numero: 2, posicao: 'Lateral Direito', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 3 },
-        { nome: 'Jean', numero: 16, posicao: 'Lateral Direito', foto: 'img/logo_ori_2.png', jogos: 12, gols: 0, assistencias: 0 },
-        { nome: 'João Vitor', numero: 3, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 20, gols: 1, assistencias: 0 },
-        { nome: 'Marcos Vinicius', numero: 4, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 19, gols: 0, assistencias: 0 },
-        { nome: 'Bruno', numero: 17, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 10, gols: 0, assistencias: 0 },
-        { nome: 'Thauã', numero: 18, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 8, gols: 0, assistencias: 0 },
-        { nome: 'André', numero: 6, posicao: 'Lateral Esquerdo', foto: 'img/logo_ori_2.png', jogos: 17, gols: 1, assistencias: 2 },
+        { nome: 'Jogador 3', numero: 2, posicao: 'Lateral Direito', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 3 },
+        { nome: 'Jogador 4', numero: 16, posicao: 'Lateral Direito', foto: 'img/logo_ori_2.png', jogos: 12, gols: 0, assistencias: 0 },
+        { nome: 'Jogador 5', numero: 3, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 20, gols: 1, assistencias: 0 },
+        { nome: 'Jogador 6', numero: 4, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 19, gols: 0, assistencias: 0 },
+        { nome: 'Jogador 7', numero: 17, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 10, gols: 0, assistencias: 0 },
+        { nome: 'Jogador 8', numero: 18, posicao: 'Zagueiro', foto: 'img/logo_ori_2.png', jogos: 8, gols: 0, assistencias: 0 },
+        { nome: 'Jogador 9', numero: 6, posicao: 'Lateral Esquerdo', foto: 'img/logo_ori_2.png', jogos: 17, gols: 1, assistencias: 2 },
 
         // Meio-campistas
-        { nome: 'Ivan', numero: 5, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 22, gols: 0, assistencias: 1 },
-        { nome: 'Maurício', numero: 8, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 21, gols: 0, assistencias: 2 }, 
-        { nome: 'Osmar', numero: 13, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 7, gols: 0, assistencias: 0 },
-        { nome: 'Robério', numero: 7, posicao: 'Meio Campo', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 2 },
-        { nome: 'Vitor Hugo', numero: 14, posicao: 'Meio Campo', foto: 'img/logo_ori_2.png', jogos: 15, gols: 0, assistencias: 0 },
-        { nome: 'Bruninho', numero: 11, posicao: 'Meia Atacante', foto: 'img/logo_ori_2.png', jogos: 20, gols: 4, assistencias: 1 }, 
-
+        { nome: 'Jogador 10', numero: 5, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 22, gols: 0, assistencias: 1 },
+        { nome: 'Jogador 11', numero: 8, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 21, gols: 0, assistencias: 2 }, 
+        { nome: 'Jogador 12', numero: 13, posicao: 'Volante', foto: 'img/logo_ori_2.png', jogos: 7, gols: 0, assistencias: 0 },
+        { nome: 'Jogador 13', numero: 7, posicao: 'Meio Campo', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 2 },
+        
         // Atacantes
-        { nome: 'Kito', numero: 21, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 14, gols: 1, assistencias: 0 },
-        { nome: 'Roger', numero: 22, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 16, gols: 2, assistencias: 2 }, 
-        { nome: 'Zinho', numero: 10, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 22, gols: 4, assistencias: 2 }, 
-        { nome: 'Elenaldo', numero: 20, posicao: 'Centroavante', foto: 'img/logo_ori_2.png', jogos: 19, gols: 1, assistencias: 0 }, 
-        { nome: 'Kevem', numero: 9, posicao: 'Centroavante', foto: 'img/logo_ori_2.png', jogos: 18, gols: 1, assistencias: 1 }, 
-        { nome: 'Leandro', numero: 15, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 17, gols: 3, assistencias: 0 }, 
-        { nome: 'Vitorugo', numero: 19, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 11, gols: 1, assistencias: 0 },
-        { nome: 'Joseph', numero: 23, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 9, gols: 1, assistencias: 0 },
+        { nome: 'Jogador 14', numero: 21, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 14, gols: 1, assistencias: 0 },
+        { nome: 'Jogador 15', numero: 22, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 16, gols: 2, assistencias: 2 }, 
+        { nome: 'Jogador 16', numero: 10, posicao: 'Ponta', foto: 'img/logo_ori_2.png', jogos: 22, gols: 4, assistencias: 2 }, 
+       
         
         // Comissão Técnica
         { nome: 'Nome do Técnico', posicao: 'Treinador Principal', foto: 'img/jogadores/tecnico.jpg' },
